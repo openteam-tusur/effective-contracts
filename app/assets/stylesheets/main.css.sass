@@ -1,0 +1,237 @@
+@import 'compass/reset'
+@import 'compass/utilities'
+
+html, body
+  color: #222
+  font-size: 12px
+  line-height: 16px
+
+html, body, input, textarea, select, button, a, p, b, i
+  font-family: 'Verdana', sans-serif
+  font-weight: normal
+
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+
+h1
+  font-size: 18px
+  line-height: 20px
+  margin: 18px 0
+  text-align: center
+
+h2
+  font-size: 16px
+  line-height: 18px
+  margin: 16px 0
+
+h3
+  font-size: 14px
+  line-height: 16px
+  margin: 14px 0
+
+p
+  margin: 0 0 7px 0
+
+i
+  color: #555
+  font-style: italic
+
+a
+  color: #3b29c8
+
+  &:hover
+    color: #8174e3
+
+body
+  background: #F7FBFE
+  margin: 15px auto
+  width: 1024px
+
+.header
+  +clearfix
+
+  .logo
+    float: left
+
+    a
+      background: image_url('tusur.png') no-repeat 0 0
+      display: block
+      height: 47px
+      text-indent: -9999px
+      width: 150px
+
+  .title
+    float: left
+    font-size: 16px
+    line-height: 24px
+    margin: 0 0 15px 0
+    padding: 0 0 0 20px
+    text-align: left
+    width: 510px
+
+  .auth_block
+    +clearfix
+    float: right
+
+.menu
+  clear: both
+  font-size: 16px
+  text-align: center
+
+  a
+    margin: 0 5px
+
+.search
+  +clearfix
+
+  .search_in_list_wrapper
+    float: left
+
+  .link_to_file
+    float: right
+    font-size: 18px
+    span
+      font-size: 12px
+
+.message_wrapper
+  display: block
+  font-size: 16px
+  left: 0
+  line-height: 20px
+  padding: 5px 0
+  position: absolute
+  right: 0
+  text-align: center
+  top: 0
+
+  &.alert
+    background: #feb8b8
+
+  &.notice
+    background: #d6f994
+
+.list
+  +clearfix
+  margin: 25px 0
+
+  li
+    font-size: 14px
+    margin: 0 0 10px 0
+
+    .alert
+      color: #ff2e00
+
+table
+  border-collapse: collapse
+  width: 100%
+
+  th
+    font-size: 12px
+    text-align: center
+
+  th, td
+    border: 1px solid #aaa
+    padding: 5px
+
+  .center
+    text-align: center
+
+  td
+    font-size: 14px
+
+.dockets
+  li
+    +clearfix
+    margin: 0 0 10px 0
+    padding: 5px
+
+    &:hover
+      background: #eee
+
+    a
+    .lecturer
+    .errors
+      color: #d63f46
+      display: block
+      font-size: 11px
+      font-style: italic
+      padding: 3px
+
+      span
+        display: block
+        margin: 0 5px 0 0
+
+form
+  .error
+    color: #d63f46
+    display: block
+    font-size: 11px
+
+  th, td
+    padding: 3px 5px
+
+  .buttons
+    margin: 15px 0 0 0
+
+    input
+      font-size: 16px
+      margin: 0 10px 0 0
+
+    a
+      font-size: 14px
+
+.breadcrumbs
+  font-size: 10px
+  font-style: italic
+  margin: 25px 0
+
+  ul
+    +clearfix
+
+    li
+      float: left
+
+      &:after
+        content: '\2192'
+        margin: 0 5px 0 0
+
+      &:last-child
+        &:after
+          content: ''
+
+
+.info
+  font-size: 14px
+  margin: 10px 0
+
+.actions
+  font-size: 16px
+  float: right
+
+  a
+    margin: 0 0 0 10px
+
+.import_form_wrapper
+  +clearfix
+  font-size: 14px
+  line-height: 22px
+  margin: 0 0 15px 0
+
+  h4
+    float: left
+    line-height: 22px
+    margin: 0 15px 0 0
+
+  form
+    +clearfix
+
+.footer
+  color: #333
+  font-size: 16px
+  text-align: center
+  margin: 25px 0 0 0
+
+.permissions
+  li
+    line-height: 20px
+    margin: 0 0 25px 0
