@@ -1,0 +1,11 @@
+app:
+  secret:     SECRET
+
+errors:
+  key:        SECRET
+  host:       errors.openteam.ru
+
+sso:
+  key:        KEY
+  secret:     SECRET
+  url:        URL
