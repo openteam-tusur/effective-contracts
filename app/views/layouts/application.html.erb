@@ -23,8 +23,7 @@
     </div>
 
     <div class='menu'>
-      <%= link_to "Список обеспечивающих кафедр"%>
-      <%= link_to "Управление правами доступа" %>
+      <%= link_to "Управление правами доступа", permissions_path    if can? :manage, Permission.new %>
     </div>
 
     <%= yield %>

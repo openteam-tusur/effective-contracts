@@ -1,0 +1,26 @@
+<%= link_to "Добавить роль", new_permission_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Имя пользователя</th>
+      <th>Роль</th>
+      <th>Контекст</th>
+      <th>Последний вход</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @permissions.each do |permission| %>
+      <tr>
+        <td class='center'><%= permission.email %></td>
+        <td class='center'><%= permission.user || 'не активирована роль' %></td>
+        <td class='center'><%= permission.role_text %></td>
+        <td class='center'><%= permission.context.abbr if permission.context %></td>
+        <td class='center'><%= l(permission.user.current_sign_in_at, :format => :short) if permission.user %></td>
+        <td class='center'><%= link_to "удалить", permission_path(permission), :method => :delete, :confirm => 'Вы уверены?' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

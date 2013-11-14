@@ -1,0 +1,15 @@
+<%= simple_form_for resource do |f| %>
+  <%= f.input :role, :include_blank => false %>
+  <%= f.input :email,
+              :input_html => { :class => 'need_autocomplete for_emails' },
+              :label => 'Пользователь',
+              :placeholder => 'Начните электронную почту' %>
+
+  <%= f.input :user_id, :as => :hidden %>
+  <%= f.input :context_id, :collection => Subdivision.all, :include_blank => true, :label_method => :abbr %>
+
+  <div class="buttons">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to 'Отмена', collection_path %>
+  </div>
+<% end %>
