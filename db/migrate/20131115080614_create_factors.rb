@@ -5,6 +5,7 @@ class CreateFactors < ActiveRecord::Migration
       t.string :title
       t.string :abbr
       t.integer :grade
+      t.integer :user_id
     end
   end
 end

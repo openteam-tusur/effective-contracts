@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   sso_auth_user
 
   has_many :permissions, :dependent => :destroy
+  has_many :factors
 
   scope :with_permissions, proc { |role| joins(:permissions).where(:permissions => { :role => role }).uniq }
   scope :by_surname, ->(_) { order('last_name ASC') }

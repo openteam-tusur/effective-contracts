@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20131115080614) do
     t.string  "title"
     t.string  "abbr"
     t.integer "grade"
+    t.integer "user_id"
   end
 
   create_table "permissions", :force => true do |t|

@@ -6,7 +6,7 @@ class PermissionsController < ApplicationController
   actions :all, :except => [:update]
 
   def show
-    @factors = Factors.all
+    @factors = Factor.all
   end
 
   def edit
