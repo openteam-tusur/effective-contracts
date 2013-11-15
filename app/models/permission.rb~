@@ -32,6 +32,8 @@ class Permission < ActiveRecord::Base
     super attr_name, options
   end
 
+  before_validation :set_context_type
+  before_validation :reset_context, :if => :role_administrator?
 
   scope :by_user, ->(_) { order('email') }
 
@@ -67,6 +69,14 @@ class Permission < ActiveRecord::Base
     end
   end
 
+private
+  def set_context_type
+    self.context_type ||= 'Subdivision'
+  end
+
+  def reset_context
+    self.context_id = self.context_type = nil
+  end
 end
 
 # == Schema Information
@@ -80,3 +90,5 @@ end
 #  role         :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#
+

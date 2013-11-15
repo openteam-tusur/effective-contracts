@@ -14,17 +14,19 @@
 
     <div class="header">
       <div class="logo">
-        <%= link_to "Эффективные контракты", root_path %>
+        <%= link_to "Контрольная точка", root_path %>
       </div>
-      <div class="title">Эффективные контракты</div>
+      <div class="title">АИС Контрольная точка</div>
       <div class="auth_block">
         <%= render :partial => "sso-auth/shared/user_box" %>
       </div>
     </div>
 
     <div class='menu'>
+      <%= link_to "Список обеспечивающих кафедр", subdivisions_path if can? :index, Subdivision.new %>
       <%= link_to "Управление правами доступа", permissions_path    if can? :manage, Permission.new %>
     </div>
+
     <%= yield %>
 
     <div class="footer">

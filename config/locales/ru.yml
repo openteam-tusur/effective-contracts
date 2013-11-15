@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    attributes:
+      permission:
+        context_id:         Кафедра
+
+  cancan:
+    access_denied:          Доступ запрещен. Недостаточно прав.
+
+  enumerize:
+    attendance:
+      kind:
+        lecture:            Лекции
+        practice:           Практики
+        laboratory:         Лабораторные работы
+        research:           Курсовые исследования
+        design:             Курсовые проектирования
+
+    grade:
+      mark:
+        '0':                0 - Не аттестован
+        '2':                2 - Неудовлетворительно
+        '3':                3 - Удовлетворительно
+        '4':                4 - Хорошо
+        '5':                5 - Отлично
+
+    permission:
+      role:
+        administrator:      Админ
+        manager:            Менеджер
+

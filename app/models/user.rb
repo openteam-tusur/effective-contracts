@@ -10,10 +10,6 @@ class User < ActiveRecord::Base
     super(:only => [:id]).merge({ :label => "#{to_s} <#{email}>", :value => email })
   end
 
-  def subdivision
-    permissions.first.context
-  end
-
   def to_s
     [].tap do |s|
       s << last_name

@@ -1,11 +1,5 @@
 EffectiveContracts::Application.routes.draw do
-  resources :permissions,   :except => [:show, :edit, :update]
-
-  resources :subdivisions,  :only   => [:index, :show] do
-    resources :dockets, :except => [:index, :destroy, :new, :create] do
-      post :import, :on => :member
-    end
-  end
+  resources :permissions,   :except => [:show, :update]
 
   resources :users,         :only   => [:index]
 

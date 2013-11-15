@@ -5,6 +5,7 @@ class CreatePermissions < ActiveRecord::Migration
       t.references :context, :polymorphic => true
       t.string :role
       t.timestamps
+      t.string :email
     end
     add_index :permissions, [:user_id, :role, :context_id, :context_type], :name => 'by_user_and_role_and_context'
   end
