@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113094504) do
+ActiveRecord::Schema.define(:version => 20131115080614) do
+
+  create_table "factors", :force => true do |t|
+    t.string  "slug"
+    t.string  "title"
+    t.string  "abbr"
+    t.integer "grade"
+  end
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
