@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Аббревиатура</th>
+      <th>Название</th>
+      <th>Оценка</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @factors.each do |factor|  %>
+      <tr>
+        <td class='center'><%= factor.title %></td>
+        <td class='center'><%= factor.abbr %></td>
+        <td class='center'><%= factor.grade %></td>
+        <td class='center'><%= link_to "добавить"%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

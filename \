@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Аббревиатура</th>
+      <th>Название</th>
+      <th>Оценка</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= form_tag edit_mark_path, method: :get do %>
+    <% @factors.each do |factor|  %>
+      <tr>
+        <% if factor.user_id == params[:id].to_i %>
+          <td class='center'><%= check_box_tag 'factor[ids][]', factor.id, checked: true %></td>
+        <% else %>
+          <td class='center'><%= check_box_tag 'factor[ids][]', factor.id %></td>
+        <% end %>
+        <td class='center'><%= factor.title %></td>
+        <td class='center'><%= factor.abbr %></td>
+        <td class='center'><%= factor.grade %></td>
+      </tr>
+    <% end %>
+      <%= submit_tag "Сохранить" %>
+  <% end %>
+  </tbody>
+</table>
