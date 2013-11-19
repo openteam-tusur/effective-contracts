@@ -9,7 +9,7 @@ class Permission < ActiveRecord::Base
   belongs_to :context, :polymorphic => true
 
   validates_presence_of :email, :role
-  validates_presence_of :context_id, :context_type, :if => :role_manager?
+  #validates_presence_of :context_id, :context_type, :if => :role_manager?
 
   validates_uniqueness_of :context_id, :scope => :email
   validates_email_format_of :email, :message => 'Неверный формат электронной почты'

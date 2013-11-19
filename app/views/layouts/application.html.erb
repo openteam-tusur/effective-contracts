@@ -31,7 +31,8 @@
       </div>
 
     <div class='menu'>
-      <%= link_to "Управление правами доступа", permissions_path    if can? :manage, Permission.new %>
+      <%= link_to "Управление правами доступа", permissions_path    if can? :admin, Permission.new %>
+      <%= link_to "Выставление оценок", marks_path if can? :index, Mark.new %>
     </div>
     <%= yield %>
 

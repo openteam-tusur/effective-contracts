@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115080614) do
+ActiveRecord::Schema.define(:version => 20131119120612) do
+
+  create_table "connections", :force => true do |t|
+    t.integer "lecturer_id"
+    t.integer "value_id"
+  end
 
   create_table "factors", :force => true do |t|
     t.string  "slug"
@@ -19,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20131115080614) do
     t.string  "abbr"
     t.integer "grade"
     t.integer "user_id"
+  end
+
+  create_table "lecturers", :force => true do |t|
+    t.string "author"
+  end
+
+  create_table "marks", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "permissions", :force => true do |t|
@@ -51,5 +65,9 @@ ActiveRecord::Schema.define(:version => 20131115080614) do
   end
 
   add_index "users", ["uid"], :name => "index_users_on_uid"
+
+  create_table "values", :force => true do |t|
+    t.string "name"
+  end
 
 end
