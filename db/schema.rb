@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(:version => 20131119120612) do
   add_index "users", ["uid"], :name => "index_users_on_uid"
 
   create_table "values", :force => true do |t|
-    t.string "name"
+    t.integer "factor_id"
+    t.string  "name"
   end
 
 end

@@ -1,0 +1,5 @@
+<%= form_tag edit_mark_path, method: :get do  %>
+  <%= text_field_tag :title,nil, placeholder: "Название" %>
+  <%= text_field_tag :author, nil, placeholder: "Автор" %>
+  <%= submit_tag "Сохранить" %>
+<% end %>
