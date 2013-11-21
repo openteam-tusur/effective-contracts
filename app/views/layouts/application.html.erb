@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Контрольная точка</title>
+    <title>Эффективные контракты</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -22,8 +22,8 @@
       </div>
     </div>
       <div class="search_form">
-        <%= simple_form_for :student, :url => search_path, :html => { :method => :get, :novalidate => true } do |f| %>
-            <%= f.input :search, :input_html => { :value => (params[:student][:search] if params[:student])}, label: false %>
+        <%= simple_form_for :form, :url => search_path, :html => { :method => :get, :novalidate => true } do |f| %>
+            <%= f.input :search, :input_html => { :value => (params[:search] if params[:search])}, label: false %>
           <div class="buttons">
             <%= f.submit 'Найти' %>
           </div>
@@ -38,7 +38,6 @@
 
     <div class="footer">
       По всем вопросам пишите на <a href='mailto:tusur-checkpoint@openteam.ru'>tusur-checkpoint@openteam.ru</a>
-      <%= link_to "Инструкция", '/files/help.pdf' %>
     </div>
    </body>
 </html>

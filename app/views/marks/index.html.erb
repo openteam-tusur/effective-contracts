@@ -5,6 +5,7 @@
       <th>Название</th>
       <th>Аббревиатура</th>
       <th>Оценка</th>
+      <th>Значение</th>
       <th></th>
     </tr>
   </thead>
@@ -14,6 +15,16 @@
         <td class='center'><%= factor.title %></td>
         <td class='center'><%= factor.abbr %></td>
         <td class='center'><%= factor.grade %></td>
+        <td class='center'>
+        <% unless @values[factor.id].nil? %>
+          <% @values[factor.id].each do |value| %>
+            <p><%= value.name %></p>
+            <% @lecturers[value.id].each do |lecturer| %>
+              <p>(<%= lecturer.author %>)</p>
+            <% end %>
+          <% end %>
+        <% end %>
+        </td>
         <td class='center'><%= link_to "добавить", mark_path(factor.id)%>
       </tr>
     <% end %>

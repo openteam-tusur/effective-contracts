@@ -1,5 +1,6 @@
 <%= form_tag edit_mark_path, method: :get do  %>
-  <%= text_field_tag :title,nil, placeholder: "Название" %>
-  <%= text_field_tag :author, nil, placeholder: "Автор" %>
-  <%= submit_tag "Сохранить" %>
+  <%= text_field_tag 'factors[title]',nil, placeholder: "Название" %>
+  <%= text_field_tag 'factors[author][]', nil, placeholder: "Автор" %> <%= button_tag "Добавить", id: "add", onclick: "return false" %><br />
+  <div id="list"></div>
+  <%= submit_tag "Сохранить", style: "display: none" %>
 <% end %>
