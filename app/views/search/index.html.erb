@@ -1,26 +1,31 @@
-<table>
-  <thead>
-    <tr>
-      <th>Название</th>
-      <th>Ответственный</th>
-    </tr>
-  </thead>
-  <tbody>
-  <ul>
-    <% @factors.each do |factor|  %>
+<% unless @results.nil? %>
+  <table>
+    <thead>
       <tr>
-        <td class='center'><%= factor.title %>
-          <% unless @temp4[factor.id].nil? %>
-            <% @temp4[factor.id].each do |temp|%>
-              <li><%= temp.name %></li>
-            <% end %>
-          <% end %>
-        </td>
-        <td class= 'center'>
-          <%=@users[factor.id].name unless @users[factor.id].nil? %>
-      </td>
+        <th>Название</th>
+        <th>Ответственный</th>
       </tr>
-    <% end %>
-  </ul>
+    </thead>
+    <tbody>
+      <ul>
+        <% @factors.each do |factor|  %>
+          <tr>
+            <td class='center'><%= factor.title %>
+            <% unless @temp4.nil? %>
+              <% @temp4[factor.id].each do |temp|%>
+                <li><%= temp.name %></li>
+              <% end %>
+            <% end %>
+          </td>
+          <td class= 'center'>
+            <%=@users[factor.id].name unless @users[factor.id].nil? %>
+          </td>
+        </tr>
+      <% end %>
+    </ul>
   </tbody>
-</table>
+</table>    
+<% else %>
+  Ничего не найдено
+<% end %>
+
