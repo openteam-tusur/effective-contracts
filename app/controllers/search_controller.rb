@@ -7,12 +7,19 @@ class SearchController < ApplicationController
       @users[factor.id]=User.where(id: factor.user_id).first
     end
 
-    @temp3=Hash.new
+    @temp4=Hash.new
     @temp=Lecturer.find(@results.id)
     @temp1=@temp.connections
+    i=0
+    a=Array.new
     @temp1.each do |t1|
-      temp4=Value.where(id: t1.value_id).first
-      @temp3[temp4.factor_id]=temp4
+      a[i]=t1.value_id
+      i=i+1
+    end
+    temp3=Value.where(id: a)
+    factors=Factor.all
+    factors.each do |f|
+      @temp4[f.id]=temp3.where(factor_id: f.id)
     end
   end
 end

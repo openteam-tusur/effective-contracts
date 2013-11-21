@@ -6,13 +6,21 @@
     </tr>
   </thead>
   <tbody>
+  <ul>
     <% @factors.each do |factor|  %>
       <tr>
         <td class='center'><%= factor.title %>
-          <%= @temp3[factor.id].name unless @temp3[factor.id].nil? %>
+          <% unless @temp4[factor.id].nil? %>
+            <% @temp4[factor.id].each do |temp|%>
+              <li><%= temp.name %></li>
+            <% end %>
+          <% end %>
         </td>
-        <td class= 'center'><%=@users[factor.id].name unless @users[factor.id].nil? %></td>
+        <td class= 'center'>
+          <%=@users[factor.id].name unless @users[factor.id].nil? %>
+      </td>
       </tr>
     <% end %>
+  </ul>
   </tbody>
 </table>
