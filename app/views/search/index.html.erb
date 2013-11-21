@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Ответственный</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @factors.each do |factor|  %>
+      <tr>
+        <td class='center'><%= factor.title %>
+          <%= @temp3[factor.id].name unless @temp3[factor.id].nil? %>
+        </td>
+        <td class= 'center'><%=@users[factor.id].name unless @users[factor.id].nil? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

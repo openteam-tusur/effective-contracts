@@ -13,7 +13,7 @@ class MarksController < ApplicationController
         a=Array.new
         temp1.each do |t1|
           a[i]=t1.lecturer_id
-          i=i+1
+          i = i + 1
         end
         @lecturers[t.id]=Lecturer.where(id: a)
       end
@@ -24,8 +24,13 @@ class MarksController < ApplicationController
     f=Factor.find(params[:id])
     v=f.values.create(name: params[:factors][:title])
     params[:author][:name].each do |author|
-      l=Lecturer.create(author: author)
-      l.connections.create(value_id: v.id)
+      search = Lecturer.where(author: author)
+      if search.count == 0 
+        l=Lecturer.create(author: author)
+        l.connections.create(value_id: v.id)
+      else
+        search.first.connections.create(value_id: v.id)
+      end
     end
     redirect_to action: :index
   end
