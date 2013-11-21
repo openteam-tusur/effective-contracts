@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $("#add").click ->
+    $("#list").append("<input type='hidden' name='author[name][]' value='"+$("#factors_author_").val()+"' />")
+    $("#list").append("<p>"+$("#factors_author_").val()+"</p>")
+    $("#factors_author_").val("")
+    $("input[name='commit']").show()
