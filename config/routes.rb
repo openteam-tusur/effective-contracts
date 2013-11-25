@@ -4,4 +4,6 @@ EffectiveContracts::Application.routes.draw do
   root :to => 'application#index'
   get 'search' => 'search#index'
   resources :marks,          :only => [:index, :edit, :show]
+  resources :lecturers
+  resources :values
 end

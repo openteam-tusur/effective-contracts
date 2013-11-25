@@ -1,14 +1,34 @@
-<%= form_tag edit_mark_path, method: :get do  %>
-  <%= text_field_tag 'factors[title]',nil, placeholder: "Название" %>
-  <%= text_field_tag 'factors[author][]', nil, placeholder: "Автор" %> <%= button_tag "Добавить", id: "add", onclick: "return false" %><br />
-  <div id="list"></div>
-  <%= submit_tag "Сохранить", style: "display: none" %>
+<%= nested_form_for Value.new, url: edit_mark_path, method: :get do |f| %>
+    <%= f.text_field :name, placeholder: "Название" %>
+    <%= f.fields_for :lecturers do |task_form| %>
+    <%= task_form.text_field :author, placeholder: "Автор" %>
+    <%= task_form.link_to_remove "Удалить" %>
+  <% end %>
+  <p><%= f.link_to_add "Добавить автора", :lecturers %></p>
+  <%= f.submit  %>
 <% end %>
-<%= nested_form_for @l do |f| %>
-  <%= f.fields_for :connections do |task_form| %>
-    <%= task_form.text_field :name %>
-  <%= task_form.link_to_remove "Remove this task" %>
-<% end %>
-<p><%= f.link_to_add "Add a task", :tasks %></p>
-<% end %>
-<!-- TODO: Вывод записей -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Авторы</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @v.each do |public| %>
+    <% i = 0 %>
+    <tr>
+      <td class='center'><%= public.name %></td>
+      <td class='center'>
+      <% while i < @v.count %>
+        <% @v[i].lecturers.each do |l| %>
+          <%= l.author %>
+        <% end %>
+        <% i += 1 %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
