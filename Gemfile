@@ -21,6 +21,7 @@ group :default do
   gem 'rails', '~> 3.2.15'
   gem 'russian'
   gem 'simple_form'
+  gem "nested_form"
   gem 'sso-auth'
   gem 'validates_email_format_of'
 end

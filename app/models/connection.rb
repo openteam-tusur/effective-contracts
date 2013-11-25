@@ -1,5 +1,5 @@
 class Connection < ActiveRecord::Base
   attr_accessible :lecturer_id, :value_id
-  belongs_to :lecturers
-  belongs_to :values
+  belongs_to :lecturer
+  belongs_to :value
 end

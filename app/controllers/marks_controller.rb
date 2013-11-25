@@ -18,6 +18,7 @@ class MarksController < ApplicationController
         @lecturers[t.id]=Lecturer.where(id: a)
       end
     end
+    @l = Lecturer.new
   end
 
   def edit
