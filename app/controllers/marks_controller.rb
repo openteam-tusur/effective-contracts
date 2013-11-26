@@ -2,23 +2,6 @@ class MarksController < ApplicationController
   def index
     user = User.find(current_user.id)
     @factors = user.factors
-    @values=Hash.new
-    @lecturers = Hash.new
-    @factors.each do |f|
-      @values[f.id] = f.values
-      temp=f.values
-      temp.each do |t|
-        temp1=t.connections
-        i=0
-        a=Array.new
-        temp1.each do |t1|
-          a[i]=t1.lecturer_id
-          i = i + 1
-        end
-        @lecturers[t.id]=Lecturer.where(id: a)
-      end
-    end
-    @l = Lecturer.new
   end
 
   def edit
