@@ -1,7 +1,11 @@
 class LecturersController < ApplicationController
-  def create
-    params[:lecturer][:values_attributes].each do |f,b|
-      puts b[:name]
-    end
+  inherit_resources
+  load_and_authorize_resource
+  actions :index
+  layout false
+  respond_to :json
+
+  def collection
+    super.where("author LIKE ?", "%#{params[:term]}%" )
   end
 end
