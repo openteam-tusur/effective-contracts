@@ -11,9 +11,9 @@
         <% @factors.each do |factor|  %>
           <tr>
             <td class='center'><%= factor.title %>
-            <% unless @temp4.nil? %>
-              <% @temp4[factor.id].each do |temp|%>
-                <li><%= temp.name %></li>
+            <% unless @authors.nil? %>
+              <% @authors[factor.id].each do |a|%>
+                <li><%= a.name %></li>
               <% end %>
             <% end %>
           </td>
