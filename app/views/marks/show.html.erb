@@ -16,19 +16,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @v.each do |public| %>
     <% i = 0 %>
+    <% @v.each do |public| %>
     <tr>
       <td class='center'><%= public.name %></td>
       <td class='center'>
-      <% while i < @v.count %>
+        <ul>
         <% @v[i].lecturers.each do |l| %>
-          <%= l.author %>
+        <li><%= l.author %></li>
         <% end %>
-        <% i += 1 %>
-      <% end %>
+      </ul>
       </td>
     </tr>
+    <% i += 1 %>
     <% end %>
   </tbody>
 </table>
