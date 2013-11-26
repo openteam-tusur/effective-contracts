@@ -1,6 +1,6 @@
 <%= nested_form_for Value.new, url: edit_mark_path, method: :get do |f| %>
-    <%= f.text_field :name, placeholder: "Название" %>
-    <%= f.fields_for :lecturers do |task_form| %>
+  <%= f.text_field :name, placeholder: "Название" %>
+  <%= f.fields_for :lecturers do |task_form| %>
     <%= task_form.text_field :author, placeholder: "Автор" %>
     <%= task_form.link_to_remove "Удалить" %>
   <% end %>
@@ -18,17 +18,17 @@
   <tbody>
     <% i = 0 %>
     <% @v.each do |public| %>
-    <tr>
-      <td class='center'><%= public.name %></td>
-      <td class='center'>
-        <ul>
-        <% @v[i].lecturers.each do |l| %>
-        <li><%= l.author %></li>
-        <% end %>
-      </ul>
-      </td>
-    </tr>
-    <% i += 1 %>
+      <tr>
+        <td class='center'><%= public.name %></td>
+        <td class='center'>
+          <ul>
+            <% @v[i].lecturers.each do |l| %>
+              <li><%= l.author %></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+      <% i += 1 %>
     <% end %>
   </tbody>
 </table>

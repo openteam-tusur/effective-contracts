@@ -23,7 +23,7 @@
     </div>
       <div class="search_form">
         <%= simple_form_for :form, :url => search_path, :html => { :method => :get, :novalidate => true } do |f| %>
-            <%= f.input :search, :input_html => { :value => (params[:search] if params[:search])}, label: false %>
+            <%= f.input :search, :input_html => { :value => (params[:form][:search] if params[:form])}, label: false %>
           <div class="buttons">
             <%= f.submit 'Найти' %>
           </div>

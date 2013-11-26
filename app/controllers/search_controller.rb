@@ -1,6 +1,8 @@
+#coding: utf-8
+require "unicode_utils/titlecase" 
 class SearchController < ApplicationController
   def index
-    @results = Lecturer.where(author: params[:form][:search].to_s.capitalize!).first
+    @results = Lecturer.where(author: UnicodeUtils.titlecase(params[:form][:search])).first
     @users=Hash.new
     @factors=Factor.all
     @factors.each do |factor|

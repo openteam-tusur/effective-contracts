@@ -24,6 +24,7 @@ group :default do
   gem "nested_form"
   gem 'sso-auth'
   gem 'validates_email_format_of'
+  gem 'unicode_utils'
 end
 
 group :development do
