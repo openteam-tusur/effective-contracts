@@ -18,7 +18,7 @@ class MarksController < ApplicationController
     end
     redirect_to action: :index
   end
-  
+
   def show
     @v = Value.where(factor_id: params[:id]) # -> name
   end
