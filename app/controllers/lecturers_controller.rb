@@ -1,3 +1,5 @@
+#coding: utf-8
+require "unicode_utils/titlecase" 
 class LecturersController < ApplicationController
   inherit_resources
   load_and_authorize_resource
@@ -22,7 +24,7 @@ class LecturersController < ApplicationController
   end
 
   def collection
-    super.where("author LIKE ?", "%#{params[:term]}%" )
+    super.where("author LIKE ?", "%#{UnicodeUtils.titlecase(params[:term])}%" )
   end
 
 end

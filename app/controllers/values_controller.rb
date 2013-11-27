@@ -7,7 +7,7 @@ class ValuesController < ApplicationController
   end
 
   def edit
-    unless params[:value][:lecturers_attributes].nil? and params[:value][:name].empty?
+    unless params[:value][:lecturers_attributes].nil? or params[:value][:name].empty?
       f = Factor.find(params[:id])
       v = f.values.create(name: params[:value][:name])
       params[:value][:lecturers_attributes].each do |temp, names|
