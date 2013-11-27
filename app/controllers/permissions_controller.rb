@@ -6,17 +6,19 @@ class PermissionsController < ApplicationController
 
   def show
     @factors = Factor.all
+    @user_id = Permission.where(id: params[:id]).first.user.id
   end
 
   def edit
-    user = User.find(params[:id])
+    permissions = Permission.find(params[:id])
+    user = User.find(permissions.user.id)
     user.factors.each do |f|
       Factor.update(f.id, user_id: 0)
     end
 
     unless params[:factor].nil?
       params[:factor][:ids].each do |p|
-        Factor.update(p, user_id: params[:id])
+        Factor.update(p, user_id: permissions.user.id)
       end
     end
     redirect_to action: :index

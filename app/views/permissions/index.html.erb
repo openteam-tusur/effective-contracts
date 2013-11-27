@@ -1,5 +1,3 @@
-
-
 <table>
   <thead>
     <tr>
@@ -19,7 +17,7 @@
         <td class='center'><%= permission.user || 'не активирована роль' %></td>
         <td class='center'><%= permission.role_text %></td>
         <td class='center'><%= l(permission.user.current_sign_in_at, :format => :short) if permission.user %></td>
-        <td class="center"><% permission.user.factors.each do |f| %> <%= f.abbr %> <% end %></td>
+        <td class="center"><% permission.user.factors.each do |f| %> <%= h(f.abbr) %> <% end  %></td>
         <td class='center'><%= link_to "изменить", permission_path(permission) %>
         <td class='center'><%= link_to "удалить", permission_path(permission), :method => :delete, :confirm => 'Вы уверены?' %></td>
       </tr>

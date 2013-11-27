@@ -5,4 +5,5 @@ EffectiveContracts::Application.routes.draw do
   get 'search' => 'search#index'
   resources :lecturers
   resources :values
+  resources :factors
 end

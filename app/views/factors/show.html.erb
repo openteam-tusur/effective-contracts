@@ -1,0 +1,37 @@
+<h2><%= @factor.title %></h2> <br />
+<%= nested_form_for Value.new, url: edit_factor_path, method: :get do |f| %>
+  <%= f.text_field :name, placeholder: "Название" %>
+<%= f.fields_for :lecturers do |task_form| %>
+  <%= task_form.text_field :author, placeholder: "Автор", class: "need_autocomplete" %>
+<%= task_form.link_to_remove "Удалить" %>
+  <% end %>
+<p><%= f.link_to_add "Добавить автора", :lecturers %></p>
+<%= f.submit "Сохранить"  %>
+<% end %>
+<br />
+<br />
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Авторы</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% i = 0 %>
+  <% @v.each do |public| %>
+    <tr>
+    <td class='center'><%= public.name %></td>
+    <td class='center'>
+      <ul>
+        <% @v[i].lecturers.each do |l| %>
+          <li><%= l.author %></li>
+      <% end %>
+      </ul>
+    </td>
+  </tr>
+  <% i += 1 %>
+<% end %>
+  </tbody>
+</table>

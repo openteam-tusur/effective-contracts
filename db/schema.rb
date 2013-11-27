@@ -30,11 +30,6 @@ ActiveRecord::Schema.define(:version => 20131119120612) do
     t.string "author"
   end
 
-  create_table "marks", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "context_id"

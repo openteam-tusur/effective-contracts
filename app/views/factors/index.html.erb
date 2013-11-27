@@ -10,7 +10,7 @@
   <tbody>
     <% @factors.each do |factor|  %>
       <tr>
-        <td class='center'><%= link_to factor.title, value_path(factor.id) %></td>
+        <td class='center'><%= link_to factor.title, factor_path(factor.id) %></td>
         <td class='center'><%= factor.abbr %></td>
         <td class='center'><%= factor.grade %></td>
       </tr>

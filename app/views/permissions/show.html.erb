@@ -11,7 +11,7 @@
   <%= form_tag edit_permission_path, method: :get do %>
     <% @factors.each do |factor|  %>
       <tr>
-        <% if factor.user_id == params[:id].to_i %>
+        <% if factor.user_id == @user_id.to_i %>
           <td class='center'><%= check_box_tag 'factor[ids][]', factor.id, checked: true %></td>
         <% else %>
           <td class='center'><%= check_box_tag 'factor[ids][]', factor.id %></td>
