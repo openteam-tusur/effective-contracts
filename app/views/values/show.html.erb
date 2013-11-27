@@ -1,4 +1,4 @@
-<%= nested_form_for Value.new, url: edit_mark_path, method: :get do |f| %>
+<%= nested_form_for Value.new, url: edit_value_path, method: :get do |f| %>
   <%= f.text_field :name, placeholder: "Название" %>
   <%= f.fields_for :lecturers do |task_form| %>
     <%= task_form.text_field :author, placeholder: "Автор", class: "need_autocomplete" %>

@@ -32,7 +32,7 @@
 
     <div class='menu'>
       <%= link_to "Управление правами доступа", permissions_path    if can? :admin, Permission.new %>
-      <%= link_to "Выставление оценок", marks_path if can? :index, Mark.new %>
+      <%= link_to "Выставление оценок", values_path if can? :index, Value.new %>
     </div>
     <%= yield %>
 
