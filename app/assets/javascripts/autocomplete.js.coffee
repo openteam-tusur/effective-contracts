@@ -4,8 +4,8 @@ $ ->
       source: "/lecturers"
       delay: 200
       select: (evt, ui) ->
-        console.log(ui)
-        $('.need_autocomplete').val(ui.item.author)
+        $(this).val(ui.item.label)
+        true
     })
     )
 

@@ -1,8 +1,0 @@
-<%= nested_form_for Lecturer.new do |f| %>
-  <%= f.fields_for :connections do |task_form| %>
-    <%= task_form.text_field :name %>
-  <%= task_form.link_to_remove "Remove this task" %>
-<% end %>
-<p><%= f.link_to_add "Add a task", :connections %></p>
-<% end %>
-
