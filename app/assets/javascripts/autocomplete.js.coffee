@@ -1,8 +1,11 @@
 $ ->
-  $('.need_autocomplete.for_emails').autocomplete({
-    source: '/users'
-    delay: 200
-    select: (evt, ui) ->
-      $('#permission_user_id').val(ui.item.id)
-  })
+  $(document).on("focus",".need_autocomplete", ->
+    $('.need_autocomplete').autocomplete({
+      source: "/lecturers"
+      delay: 200
+      select: (evt, ui) ->
+        console.log(ui)
+        $('.need_autocomplete').val(ui.item.author)
+    })
+    )
 
